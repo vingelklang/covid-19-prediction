@@ -138,7 +138,7 @@ finaldata = []
 dfPlot = pd.DataFrame()
 dfcPlot = pd.DataFrame()
 training_data = -1
-interactive = ['India', 'World', 'United States', 'United Kingdom', 'Brazil', 'Italy', 'France', 'Russia']
+interactive = ['Germany']
 num_peaks = dict(zip(interactive, [1, 3, 3, 2, 1, 2, 2, 2]))
 for country in interactive:
 	try:
@@ -260,6 +260,7 @@ for country in interactive:
 		fig.update_yaxes(tickformat = ',.0f',title_text="Number of total deaths", secondary_y=True, gridcolor='lightgray', showline=True, linewidth=3, linecolor='blue', gridwidth=1)
 		fig.write_html("plots/"+country+"_total"+".html")
 		fig.data = []
+		print(newpredsave)
 	except Exception as e:
 		print(str(e))
 		raise(e)
