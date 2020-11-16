@@ -144,7 +144,7 @@ training_data = -1
 
 interactive = ['Germany']
 
-num_peaks = dict(zip(interactive, [1, 3, 3, 2, 1, 2, 2, 2]))
+num_peaks = dict(zip(interactive, [2, 3, 3, 2, 1, 2, 2, 2]))
 for country in interactive:
 	try:
 		dead = False
@@ -266,7 +266,11 @@ for country in interactive:
 		fig.update_yaxes(tickformat = ',.0f',title_text="Number of total deaths", secondary_y=True, gridcolor='lightgray', showline=True, linewidth=3, linecolor='blue', gridwidth=1)
 		fig.write_html("plots/"+country+"_total"+".html")
 		fig.data = []
-		print(newpredsave)
+
+		# Printing dates with predicted new cases		
+		for i in range(0,len(dates)):
+			print(dates[i], ": ", newpredsave[i])
+
 	except Exception as e:
 		print(str(e))
 		raise(e)
